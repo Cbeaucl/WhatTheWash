@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Appliance } from '../model/appliance';
 
 @Component({
   selector: 'app-appliance-status',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appliance-status.component.css']
 })
 export class ApplianceStatusComponent implements OnInit {
-  
+  @Input() appliance:Appliance
+  available = false
+  timer = 40
   constructor() { }
 
   ngOnInit() {

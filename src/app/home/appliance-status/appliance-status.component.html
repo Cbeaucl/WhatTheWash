@@ -1,3 +1,20 @@
-<p>
-  appliance-status works!
-</p>
+<mat-list-item *ngIf="appliance.status === 'available'">
+  <mat-icon matListIcon aria-hidden="false" aria-label="Washer Ready" style="color: green">check_circle</mat-icon>
+  <h3 matLine> {{appliance.name}} </h3>
+  <p matLine>
+    <span> Ready! </span>
+  </p>
+  <button mat-button>Start</button>
+</mat-list-item>
+
+<mat-list-item *ngIf="appliance.status === 'inUse'">
+  <mat-icon matListIcon aria-hidden="false" aria-label="Washer Ready" style="color: red">error</mat-icon>
+  <h3 matLine> {{appliance.name}} </h3>
+  <p matLine>
+    <span>In Use</span>
+  </p>
+  <p matLine>
+    <span>Time Remaining: {{appliance.timeRemaining}}</span>
+  </p>
+  <button mat-button>Start</button>
+</mat-list-item>
